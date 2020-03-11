@@ -1,0 +1,10 @@
+assets/js/vendor
+assets/js/admin/vendor
+assets/js/frontend/vendor
+assets/js/shared/vendor
+dist/js/
+includes/library
+includes/classmap
+gulp-tasks/
+webpack.config.babel.js
+gulpfile.babel.js
