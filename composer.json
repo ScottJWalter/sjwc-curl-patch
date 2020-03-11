@@ -1,18 +1,36 @@
 {
-  "name": "10up/sjwc-curl-patch",
-  "description": "Sjwc Curl Patch",
+  "name": "scottjwalter/sjwc-curl-patch",
+  "description": "SJWC Curl Patch",
+  "type": "wordpress-plugin",
+  "license": "proprietary",
   "authors": [
     {
-      "name": "Author",
-      "email": "info@10up.com"
+      "name": "Scott J. Walter",
+      "email": "scott@scottjwalter.consulting",
+      "homepage": "https://scottjwalter.consulting/",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://scottjwalter.consulting",
+    "email": "support@scottjwalter.consulting",
+    "source": "https://bitbucket.org/sjwconsulting/sjwc-common-library.git"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "composer/installers": "~1.0",
+    "eloquent/composer-npm-bridge": "^4.1",
+    "roave/security-advisories": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "SjwcCurlPatch\\": "includes/classes/"
+      "SJWC\\CurlPatch\\": "includes/classes/"
     }
   },
   "require-dev": {
@@ -21,7 +39,10 @@
     "10up/phpcs-composer": "dev-master"
   },
   "scripts": {
-    "lint": "phpcs .",
-    "lint-fix": "phpcbf ."
+    "lint": "./vendor/bin/phpcs .",
+    "lint-fix": "./vendor/bin/phpcbf .",
+    "security-check": [
+      "@composer update --dry-run roave/security-advisories"
+    ]
   }
 }
